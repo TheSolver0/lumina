@@ -84,7 +84,7 @@
 				</form>
 			</div>
 			<div class="page-name">
-			    <span>Newsfeed</span>
+			    <span>Accueil</span>
 			 </div>
 			<ul class="setting-area">
 				<li><a href="newsfeed.html" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
@@ -140,13 +140,13 @@
 			<ul class="chat-users">
 				<li>
 					<div class="author-thmb">
-						<img src="images/resources/side-friend1.jpg" alt="" title="Faculte des Sciences">
+						<img src="{{ asset('assets/images/resources/Logo-Facsciences-1024x1024-2.jpeg') }}" alt="" title="Faculte des Sciences">
 						<!-- <span class="status f-online"></span> -->
 					</div>
 				</li>
 				<li>
 					<div class="author-thmb">
-						<img src="images/resources/side-friend2.jpg" alt="" title="Facultes des Lettres">
+						<img src="{{ asset('assets/images/resources/Logo-Facsciences-1024x1024-2.jpeg') }}" alt="" title="Faculte des Lettres">
 						<!-- <span class="status f-away"></span> -->
 					</div>
 				</li>

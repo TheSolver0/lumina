@@ -15,12 +15,12 @@ class PostController extends Controller
             ->orderByDesc('id')
             ->paginate(10);
 
-        return view('posts.index', compact('posts'));
+        return view('index', compact('posts'));
     }
 
     public function create()
     {
-        return view('posts.create');
+        return view('index');
     }
 
     public function store(Request $request)

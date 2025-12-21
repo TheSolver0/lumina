@@ -88,7 +88,7 @@
 										</div>
 										<div class="attachments">
 											<ul>
-												<li>
+												{{-- <li>
 													<span class="add-loc">
 														<i class="fa fa-map-marker"></i>
 													</span>
@@ -98,7 +98,7 @@
 													<label class="fileContainer">
 														<input type="file">
 													</label>
-												</li>
+												</li> --}}
 												<li>
 													<i class="fa fa-image"></i>
 													<label class="fileContainer">
@@ -267,7 +267,8 @@
 									</div>
 								</div>top stories -->
 								<div class="loadMore">
-									<div class="central-meta item">
+									Aucun post disponible pour le moment.
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -460,8 +461,8 @@
 											</div>
 
 										</div>
-									</div><!-- album post -->
-									<div class="central-meta item">
+									</div><!-- album post --> --}}
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -631,8 +632,8 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- video post -->
-									<div class="central-meta item">
+									</div><!-- video post --> --}}
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -794,8 +795,8 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- digital sponsors -->
-									<div class="central-meta item">
+									</div><!-- digital sponsors --> --}}
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -960,8 +961,8 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- love post -->
-									<div class="central-meta item">
+									</div><!-- love post --> --}}
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -1118,8 +1119,8 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- without image -->
-									<div class="central-meta item">
+									</div><!-- without image --> --}}
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -1281,8 +1282,8 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- map location post -->
-									<div class="central-meta item">
+									</div><!-- map location post --> --}}
+									{{-- <div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
 												<figure>
@@ -1452,7 +1453,7 @@
 												</div>
 											</div>
 										</div>
-									</div><!-- video post -->
+									</div><!-- video post --> --}}
 							    </div>
 							</div><!-- centerl meta -->
 							<div class="col-lg-3">
@@ -1461,24 +1462,24 @@
 									<!-- explore events -->
 									<!-- profile intro widget -->
 									<div class="widget stick-widget">
-										<h4 class="widget-title">Liens recent <a title="" href="#" class="see-all">Tout voir</a></h4>
+										<h4 class="widget-title">Liens recents <a title="" href="#" class="see-all">Tout voir</a></h4>
 										<ul class="recent-links">
 											<li>
-												<figure><img src="assets/images/resources/recentlink-1.jpg" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/resources/FS_PREINSCRIPTIONS.jpg') }}" alt=""></figure>
 												<div class="re-links-meta">
 													<h6><a href="#" title="">Comment s'inscrire.</a></h6>
 													<span>il y a 2 semaines </span>
 												</div>
 											</li>
 											<li>
-												<figure><img src="assets/images/resources/recentlink-2.jpg" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/resources/DEUP_GID.jpg') }}" alt=""></figure>
 												<div class="re-links-meta">
 													<h6><a href="#" title="">Probleme de fermeture de notes</a></h6>
 													<span>il y a 3 ans </span>
 												</div>
 											</li>
 											<li>
-												<figure><img src="assets/images/resources/recentlink-3.jpg" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/resources/FS_PREINSCRIPTIONS.jpg') }}" alt=""></figure>
 												<div class="re-links-meta">
 													<h6><a href="#" title="">Probleme de releve de notes.</a></h6>
 													<span>il y 1 an</span>
