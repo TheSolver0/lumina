@@ -74,13 +74,15 @@
                         <div class="col-lg-4">
                             <div class="we-login-register">
                                 <div class="form-title">
-                                    <i class="fa fa-key"></i>Connexion
+                                    <i class="fa fa-key"></i>Inscription
                                     <span>Connectez vous et profitez de tout ce que LUMINA a à offrir.</span>
                                 </div>
                                 <form class="we-form" method="post">
                                     @csrf
+                                    <input type="text" placeholder="Nom" name="name">
                                     <input type="text" placeholder="Email" name="email">
-                                    <input type="password" placeholder="Password" name="password">
+                                    <input type="password" placeholder="Mot de passe" name="password">
+                                    <input type="password" placeholder="Mot de passe confirme" name="password_confirmation">
                                     <i class="icofont-eye-open" id="open"
                                             style="color:#9700ff; position: absolute;top:20px; right: 20px;"></i>
                                     <i class="icofont-eye-blocked" id="close"
@@ -127,7 +129,7 @@
                 // Envoyer les données via AJAX
                 $.ajax({
                     type: "POST", // ou GET selon votre configuration
-                    url: "/login", // l'url de soumission
+                    url: "/register", // l'url de soumission
                     data: formData,
                     // processData: false,
                     // contentType: false,

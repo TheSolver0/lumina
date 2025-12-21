@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>Pitnik Social Network Toolkit</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
+    <link rel="icon" href="{{ asset('assets/images/ico.png') }}" type="image/png" sizes="16x16"> 
     
     <link rel="stylesheet" href="{{ asset('assets/css/main.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/weather-icons.min.css') }}">
@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/color.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/icofont.min.css') }}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
 
 
 </head>
@@ -45,7 +51,7 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<a href="newsfeed.html" title=""><img src="images/logo2.png" alt=""></a>
+				<a href="newsfeed.html" title=""><img src="{{ asset('assets/images/logo2.png') }}" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -63,7 +69,7 @@
 	
 	<div class="topbar stick">
 		<div class="logo">
-			<a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
+			<a title="" href="newsfeed.html"><img src="{{ asset('assets/images/logo-6.png') }}" class="logo" alt=""></a>
 		</div>
 		<div class="top-area">
 			<div class="main-menu">
@@ -104,8 +110,13 @@
 				</li>
 			</ul>
 			<div class="user-img">
-				<h5>Jack Carter</h5>
-				<img src="images/resources/admin.jpg" alt="" class="pp">
+				@if (Auth::user())
+					<h5>{{ Auth::user()->name }}</h5>
+				@else
+					<h5></h5>
+				@endif
+				{{-- <h5>Jack Carter</h5> --}}
+				<img src="{{ asset('assets/images/resources/admin.jpg') }}" alt="" class="pp">
 				<span class="status f-online"></span>
 				<div class="user-setting">
 					

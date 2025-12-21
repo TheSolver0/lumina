@@ -2,7 +2,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<span class="copyright">© Pitnik 2020. All rights reserved.</span>
+					<span class="copyright">© LUMINA 2020. All rights reserved.</span>
 					<!-- <i><img src="images/credit-cards.png" alt=""></i> -->
 				</div>
 			</div>
@@ -367,6 +367,8 @@
 	<!-- <script src="js/page-tourintro.js"></script> -->
 	<script src="{{ asset("assets/js/page-tour-init.js") }}"></script>
 	<script src="{{ asset("assets/js/script.js") }}"></script>
+<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+
 	<script>
 		jQuery(document).ready(function($) {
 			
