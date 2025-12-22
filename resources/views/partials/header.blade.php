@@ -51,7 +51,7 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<a href="newsfeed.html" title=""><img src="{{ asset('assets/images/logo2.png') }}" alt=""></a>
+				<a href="newsfeed.html" title=""><img src="{{ asset('assets/images/logo-6.png') }}" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>

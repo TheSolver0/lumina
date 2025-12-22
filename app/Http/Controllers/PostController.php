@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
+// use Illuminate\Container\Attributes\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index()
     {
         // Précharger user, likes, comments et user de chaque commentaire
-        $posts = Post::with(['user', 'likes', 'comments.user'])
+        // $posts = Post::with(['user', 'likes', 'comments.user'])
+        $posts = Post::with(['user'])
             ->orderByDesc('id')
             ->paginate(10);
 
@@ -39,7 +42,7 @@ class PostController extends Controller
         }
         // Création du post
         $post = Post::create([
-            'user_id' => auth()->id,
+            'user_id' => Auth::user()->id,
             'title' => $validated['title'],
             'body' => $validated['body'] ?? null,
         ]);
@@ -63,7 +66,7 @@ class PostController extends Controller
             }
         }
 
-        return redirect()->route('activity')->with('success', 'Post créé avec succès avec images et/ou vidéos !');
+        return redirect()->route('home')->with('success', 'Post créé avec succès avec images et/ou vidéos !');
     }
 
     public function show(Post $post)
