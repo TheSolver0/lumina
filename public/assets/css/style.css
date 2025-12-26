@@ -18535,3 +18535,9 @@ table.adition tbody tr td {
     width: 127px;
     height: 41px;
 }
+.imgFac
+{
+    object-fit: contain;
+    width: 65%;
+    height: 65%;
+}

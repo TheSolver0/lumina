@@ -24,7 +24,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 
-
+	<script>
+		function logout() {
+			fetch('/logout', {
+				method: 'POST',
+				headers: {
+					'X-CSRF-TOKEN': '{{ csrf_token() }}',
+					'Content-Type': 'application/json'
+				}
+			}).then(response => {
+				if (response.ok) {
+					window.location.href = '/login';
+				} else {
+					alert('Logout failed.');
+				}
+			}).catch(error => {
+				console.error('Error:', error);
+			});
+		}
+	</script>
 
 </head>
 <body>
@@ -79,7 +97,7 @@
 			</div>
 			<div class="top-search">
 				<form method="post" class="">
-					<input type="text" placeholder="Search People, Pages, Groups etc">
+					<input type="text" placeholder="Faites une recherche ici">
 					<button data-ripple><i class="ti-search"></i></button>
 				</form>
 			</div>
@@ -119,14 +137,14 @@
 				<img src="{{ asset('assets/images/resources/admin.jpg') }}" alt="" class="pp">
 				<span class="status f-online"></span>
 				<div class="user-setting">
-					
+				
 					<span class="seting-title">User setting <a href="#" title="">see all</a></span>
 					<ul class="log-out">
 						<li><a href="about.html" title=""><i class="ti-user"></i> view profile</a></li>
 						<li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
 						<li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
 						<li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
-						<li><a href="logout.html" title=""><i class="ti-power-off"></i>log out</a></li>
+						<li><a onclick="logout();" title=""><i class="ti-power-off"></i>log out</a></li>
 					</ul>
 				</div>
 			</div>
@@ -140,13 +158,13 @@
 			<ul class="chat-users">
 				<li>
 					<div class="author-thmb">
-						<img src="{{ asset('assets/images/resources/Logo-Facsciences-1024x1024-2.jpeg') }}" alt="" title="Faculte des Sciences">
+						<img src="{{ asset('assets/images/resources/Logo-Facsciences-1024x1024-2.jpeg') }}" alt="" class="imgFac" title="Faculte des Sciences">
 						<!-- <span class="status f-online"></span> -->
 					</div>
 				</li>
 				<li>
 					<div class="author-thmb">
-						<img src="{{ asset('assets/images/resources/Logo-Facsciences-1024x1024-2.jpeg') }}" alt="" title="Faculte des Lettres">
+						<img src="{{ asset('assets/images/resources/Logo-Facsciences-1024x1024-2.jpeg') }}" alt="" class="imgFac" title="Faculte des Lettres">
 						<!-- <span class="status f-away"></span> -->
 					</div>
 				</li>

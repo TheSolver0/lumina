@@ -73,7 +73,9 @@
                                     <!-- who's following -->
                                 </aside>
                             </div><!-- sidebar -->
+				
                             <div class="col-lg-6">
+                            @if (Auth::user())
                                 <div class="central-meta postbox">
                                     <span class="create-post">Creer un post (reserve aux autorises)</span>
                                     <div class="new-postbox">
@@ -107,6 +109,7 @@
                                         
                                     </div>
                                 </div>
+                                @endif
                                 <div class="loadMore">
 									@forelse ($posts as $post)
 										<div class="central-meta item">
@@ -183,29 +186,13 @@
 																</span>	
 															</li>
 														</ul>
-														<div class="users-thumb-list">
-															<a data-toggle="tooltip" title="Anderw" href="#">
-																<img alt="" src="assets/images/resources/userlist-1.jpg">  
-															</a>
-															<a data-toggle="tooltip" title="frank" href="#">
-																<img alt="" src="assets/images/resources/userlist-2.jpg">  
-															</a>
-															<a data-toggle="tooltip" title="Sara" href="#">
-																<img alt="" src="assets/images/resources/userlist-3.jpg">  
-															</a>
-															<a data-toggle="tooltip" title="Amy" href="#">
-																<img alt="" src="assets/images/resources/userlist-4.jpg">  
-															</a>
-															<a data-toggle="tooltip" title="Ema" href="#">
-																<img alt="" src="assets/images/resources/userlist-5.jpg">  
-															</a>
-															<span><strong>You</strong>, <b>Sarah</b> and <a href="#" title="">24+ more</a> liked</span>
-														</div>
+														
 													</div>
 												</div>
 												<div class="coment-area" style="display: block;">
 													<ul class="we-comet">
-														<li>
+                                                        Pas de commentaires pour l'instant
+														{{-- <li>
 															<div class="comet-avatar">
 																<img src="assets/images/resources/admin.jpg" alt="">
 															</div>
@@ -219,10 +206,10 @@
 																</div>
 															</div>
 
-														</li>
+														</li> --}}
 														
 														<li>
-															<a href="#" title="" class="showmore underline">Plus de commentaire+</a>
+															{{-- <a href="#" title="" class="showmore underline">Plus de commentaire+</a> --}}
 														</li>
 														<li class="post-comment">
 															<div class="comet-avatar">
@@ -230,7 +217,7 @@
 															</div>
 															<div class="post-comt-box">
 																<form method="post">
-																	<textarea placeholder="Post your comment"></textarea>
+																	<textarea placeholder="Ajouter un commentaire "></textarea>
 																	<div class="add-smiles">
 																		<div class="uploadimage">
 																			<i class="fa fa-image"></i>
