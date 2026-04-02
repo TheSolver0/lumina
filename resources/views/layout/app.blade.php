@@ -14,34 +14,6 @@
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        :root {
-            --bg: #F8F7F4;
-            --surface: #FFFFFF;
-            --surface-2: #F2F0EC;
-            --border: rgba(0,0,0,0.08);
-            --border-md: rgba(0,0,0,0.14);
-            --text: #1A1918;
-            --text-2: #5C5A56;
-            --text-3: #9E9C97;
-            --accent: #1A1918;
-            --blue: #185FA5;
-            --blue-bg: #E6F1FB;
-            --blue-text: #0C447C;
-            --green: #3B6D11;
-            --green-bg: #EAF3DE;
-            --green-text: #27500A;
-            --amber: #854F0B;
-            --amber-bg: #FAEEDA;
-            --amber-text: #633806;
-            --red: #A32D2D;
-            --red-bg: #FCEBEB;
-            --red-text: #791F1F;
-            --radius: 10px;
-            --radius-sm: 6px;
-            --font-serif: 'Playfair Display', Georgia, serif;
-            --font-sans: 'Lato', sans-serif;
-        }
-
         html { font-size: 16px; }
         body {
             font-family: var(--font-sans);
