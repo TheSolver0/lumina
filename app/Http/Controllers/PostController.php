@@ -12,12 +12,20 @@ class PostController extends Controller
 {
     public function index()
     {
-        // Précharger user, likes, comments et user de chaque commentaire
-        // $posts = Post::with(['user', 'likes', 'comments.user'])
-        $posts = Post::with(['user'])
+        $posts = Post::with(['user', 'media', 'comments.user'])
+            ->withCount(['likes', 'comments'])
             ->orderByDesc('id')
             ->paginate(10);
-
+ 
+        // Ajouter user_liked sur chaque post
+        if (Auth::check()) {
+            $posts->getCollection()->transform(function ($post) {
+                $post->user_liked = $post->likes()
+                    ->where('user_id', Auth::id())->exists();
+                return $post;
+            });
+        }
+ 
         return view('index', compact('posts'));
     }
 
@@ -135,6 +143,36 @@ class PostController extends Controller
         $post->delete(); // Supprime le post en base
 
         return redirect()->back()->with('success', 'Post supprimé !');
+    }
+    public function like(Post $post)
+    {
+        $like = $post->likes()->where('user_id', Auth::id());
+        if ($like->exists()) {
+            $like->delete();
+            $liked = false;
+        } else {
+            $post->likes()->create(['user_id' => Auth::id()]);
+            $liked = true;
+        }
+        return response()->json(['liked' => $liked, 'count' => $post->likes()->count()]);
+    }
+
+    public function comment(Request $request, Post $post)
+    {
+        $request->validate(['body' => 'required|string|max:1000']);
+        $comment = $post->comments()->create([
+            'user_id' => Auth::id(),
+            'body'    => $request->body,
+        ]);
+        $comment->load('user');
+        return response()->json([
+            'comment' => [
+                'id'              => $comment->id,
+                'body'            => $comment->body,
+                'author'          => $comment->user->name,
+                'author_initials' => strtoupper(substr($comment->user->name, 0, 2)),
+            ]
+        ]);
     }
 
 }
